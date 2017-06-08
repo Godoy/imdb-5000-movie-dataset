@@ -5,7 +5,7 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 
@@ -30,7 +30,7 @@ y = movies.imdb_score.shift(0)
 X = movies.drop('imdb_score', axis=1)
 
 
-#X = X.drop('director_name', axis=1)
+X = X.drop('director_name', axis=1)
 X = X.drop('actor_1_name', axis=1)
 X = X.drop('actor_2_name', axis=1)
 X = X.drop('actor_3_name', axis=1)
