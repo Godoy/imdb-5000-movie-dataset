@@ -66,7 +66,7 @@ plt.show()
 lnr = LinearRegression().fit(X_train, y_train)
 #lnr = KNeighborsRegressor(n_neighbors=3).fit(X_train, y_train)
 
-predictions = lnr.predict(X_test)
+#predictions = lnr.predict(X_test)
 
 
 X_test["nota_real"] = y_test
