@@ -17,6 +17,8 @@ print(movies.color.describe());
 #print(movies.color.mode()[0]);
 #print(movies.dtypes)
 
+pausa = input("continuar...")
+
 movies.color = movies.color.fillna(movies.color.mode()[0])
 movies.color = movies.color.map({'Color': 1, ' Black and White':0})
 
@@ -56,6 +58,8 @@ sns.heatmap(movies.corr(),linewidths=0.1, square=True, cmap="YlGnBu", linecolor=
 movies.hist(figsize=(14, 26))
 plt.show()
 
+pausa = input("continuar...")
+
 # movies = movies.drop('actor_1_facebook_likes', axis=1)
 
 #vect = DictVectorizer(sparse=False)
@@ -68,6 +72,7 @@ lnr = LinearRegression().fit(X_train, y_train)
 
 #predictions = lnr.predict(X_test)
 
+pausa = input("continuar...")
 
 X_test["nota_real"] = y_test
 X_test["nova_estimada"] = predictions
