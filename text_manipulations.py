@@ -15,10 +15,18 @@ movies = pd.read_csv('data/movie_metadata.csv')
 #s2 = s.map('this is a string {}'.format, na_action='ignore')
 #print(s2)
 
-X = movies.director_name
-print(X)
+N = 10
 
-X_df = pd.DataFrame({'director':X})
+X = movies.director_name.drop_duplicates()
+keys = pd.Series(range(1, N + 1 ,1))
+
+tamanho = X.count()
+directors = pd.Series(X, index=range(1, tamanho + 1 ,1))
+
+print(X)
+print(directors)
+
+X_df = pd.DataFrame({'director':X.unique()})
 print(X_df)
 #print(movies.columns)
 ##X_test = (['director_name' for i in X])
@@ -26,8 +34,8 @@ print(X_df)
 
 #X = X.fillna(X.mode()[0])
 
-vec = DictVectorizer()
-X_test = vec.fit(X_df)
+#vec = DictVectorizer()
+#X_test = vec.fit(X_df)
 
 
 
